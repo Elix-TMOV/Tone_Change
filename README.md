@@ -21,4 +21,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Here is the video demo: https://youtu.be/YsEF_OS8afA
 
-Here is the documentation: 
+Here is the documentation: https://docs.google.com/document/d/e/2PACX-1vRlKtwytJekdrxcURzNq1SrtjDnOMZ3k1WEiwwnK8VZ5dVu_l66TRM7dw-mKVQQs1MqEPfmfLcgJcec/pub
