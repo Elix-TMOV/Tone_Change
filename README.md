@@ -17,3 +17,7 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+Here is the video demo: https://youtu.be/YsEF_OS8afA
+Here is the documentation: 
