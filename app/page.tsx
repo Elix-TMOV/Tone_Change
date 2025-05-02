@@ -80,7 +80,7 @@ export default function Home() {
   }, [originalText]);
 
   return (
-    <div className="w-full flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="w-full flex flex-col items-center justify-center h-screen p-4">
       {/* If there is a error show it in the toast notification */}
       <h1 className="text-2xl font-bold text-green-500 mb-4">
         Tone Slider
@@ -89,7 +89,7 @@ export default function Home() {
       <div className="h-screen w-full md:w-auto md:h-80 flex flex-col md:flex-row gap-4">
 
         {/* Text area section */}
-        <div className='flex flex-col h-[70%] md:h-full w-full md:w-[400px] justify-between'>
+        <div className='flex flex-col h-[60%] md:h-full w-full md:w-[400px] justify-between'>
           <textarea
             disabled={fetchingText}
             className="

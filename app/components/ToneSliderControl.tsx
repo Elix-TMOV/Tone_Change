@@ -65,7 +65,7 @@ export const ToneSliderControl = (
   }: ToneSliderControlProps
 ) => {
   return (
-    <div className="w-full h-[25%] md:h-auto md:w-60 flex flex-col justify-between bg-green-100 rounded-lg px-6 py-4">
+    <div className="w-full h-[30%] md:h-auto md:w-60 flex flex-col justify-between bg-green-100 rounded-lg px-6 py-4">
       <ToneSlider
         size="medium"
         aria-label="Tone slider"
