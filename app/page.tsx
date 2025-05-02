@@ -32,10 +32,14 @@ export default function Home() {
       if (response.status === 200) {
         setModifiedText(response.data.reWrittenText);
       }
+      else if (response.status === 400) {
+        setTheErrors(response.data.error);
+      }
     } catch (error) {
-      setTheErrors("Something went wrong when calling the model");
+      const err = error as any;
+      const message: string = err.response?.data?.message;
+      setTheErrors(message);
       setFetchingText(false);
-      console.error("Error: ", error);
     }
   };
 
@@ -76,8 +80,11 @@ export default function Home() {
   }, [originalText]);
 
   return (
-    <div className="w-full flex flex-row items-center justify-center min-h-screen p-4">
+    <div className="w-full flex flex-col items-center justify-center min-h-screen p-4">
       {/* If there is a error show it in the toast notification */}
+      <h1 className="text-2xl font-bold text-green-500 mb-4">
+        Tone Slider
+      </h1>
       {error && <ErrorToast message={error} onClose={() => setError(null)}/>}
       <div className="h-screen w-full md:w-auto md:h-80 flex flex-col md:flex-row gap-4">
 
@@ -93,9 +100,11 @@ export default function Home() {
             placeholder="Type your text here..."
             value={modefiedText ?? originalText}
             onChange={(e) => {
-              if (modefiedText !== null) {
-                setModifiedText(e.target.value);
-              } else {
+              // when the modified text is displayed, we don't wnat the user to change the original text by tying
+              // we only let the user change the original text when the modified text is null
+              // when modified text is null is gaurnateed that the orignal text is displayed it could also be the change accepted by the user
+              // so we will allow them to edit it
+              if (modefiedText == null) {
                 setOriginalText(e.target.value);
               }
             }}
